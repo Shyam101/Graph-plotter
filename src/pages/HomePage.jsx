@@ -10,6 +10,7 @@ const HomePage = () => {
                 with same data. Graph plotter provides user with easy-to-use and intutive web design.
             </p>
             <h2>Get Started</h2>
+            <p><strong>Note:</strong> CSV file should only contain two columns, one for key and one for value with no header</p>
             <div className="card-flex">
                 <div style={{backgroundColor: "#0088FE"}} className="homepage-card">
                     <Link to="/bar-chart">Bar Chart</Link>

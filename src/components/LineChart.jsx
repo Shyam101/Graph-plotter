@@ -11,7 +11,7 @@ import {
 } from 'recharts';
 
 
-export default class Example extends PureComponent {
+export default class LineChartComp extends PureComponent {
     
     render() {
         const {data} = this.props;

@@ -10,7 +10,7 @@ import {
     ResponsiveContainer
 } from 'recharts';
 
-export default class Example extends PureComponent {
+export default class BarChartComp extends PureComponent {
     static demoUrl = 'https://codesandbox.io/s/simple-bar-chart-tpz8r';
 
     render() {
