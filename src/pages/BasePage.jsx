@@ -7,6 +7,7 @@ import NotFoundPage from './NotFoundPage';
 import {useState} from 'react';
 import InputCard from '../components/InputCard'
 import Button from 'react-bootstrap/Button'
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 const filterEmptyData = (data) => data.filter(entry => entry.name !== undefined && entry.value !== undefined)
 
@@ -31,11 +32,24 @@ const BasePage = () => {
         ]))
     }
 
+    const onFileChange = (e) => {
+        let file = e.target.files[0]
+        let fileReader = new FileReader();
+        let alls = []
+        fileReader.onload = (edf) => {
+            let str = fileReader.result;
+            alls = str.split('\n');
+            console.log(alls);
+        }
+        
+        console.log(alls);
+        fileReader.readAsText(file);
+    }
+
     return (<div className="split-container">
         <div className="split-box"
             style={
                 {
-                    overflowY: "scroll",
                     width: "30%",
                     overflowX: "hidden"
                 }
@@ -47,10 +61,16 @@ const BasePage = () => {
         <Button variant="primary"  style={{marginTop: "10px"}} onClick={
                 () => setData((oldState) => {
                     return([
-                        ...oldState, {}
+                        ...oldState, {color: COLORS[oldState.length % COLORS.length]}
                     ])
                 })
             }>New Entry</Button>
+        
+        {/* <div>
+            <label>File</label>
+            <input type='file' onChange={onFileChange} />
+        </div> */}
+
         </div>
         <div className="split-box"
             style={

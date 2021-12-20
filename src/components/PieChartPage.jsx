@@ -5,7 +5,6 @@ import {
     Cell,
     ResponsiveContainer
 } from 'recharts';
-import { COLORS } from '../utilities/helperFunctions';
 
 const hasNegativeValue = (data) => data.some(entry => entry.value < 0)
 
@@ -33,7 +32,7 @@ const PieChartPage = (props) => {
                         >
                         <Tooltip/>
                         {data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                            <Cell key={`cell-${index}`} fill={data[index].color} />
                         ))}
                         </Pie>
                     </PieChart>

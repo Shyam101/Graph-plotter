@@ -9,7 +9,6 @@ import {
     Tooltip,
     ResponsiveContainer
 } from 'recharts';
-import { COLORS } from '../utilities/helperFunctions';
 
 export default class Example extends PureComponent {
     static demoUrl = 'https://codesandbox.io/s/simple-bar-chart-tpz8r';
@@ -35,7 +34,7 @@ export default class Example extends PureComponent {
                     <YAxis/>
                     <Tooltip/>
                     <Bar dataKey="value" fill="#8884d8" isAnimationActive={true}> {this.props.data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                <Cell key={`cell-${index}`} fill={data[index].color} />
                 ))}</Bar>
                 </BarChart>
             </ResponsiveContainer>);
