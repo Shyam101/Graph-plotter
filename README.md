@@ -5,7 +5,7 @@ hands on experince of different software development methodologies,estimation te
 with implementation 
 
 ## Depolyed app
-[Web Application Link](https://graph-plotter1.herokuapp.com/line-chart")
+[Web Application Link](https://graph-plotter1.herokuapp.com)
 
 ## Features
 - Plot Charts (Bar-chart, Pie-chart, Line-chart)
@@ -20,7 +20,7 @@ with implementation
 
 ![GIF showing Demo of System](https://github.com/Shyam101/Graph-plotter/blob/master/src/images/home.gif)
 
-##Sample CSV file
+## Sample CSV file
 [Sample CSV](https://github.com/Shyam101/Graph-plotter/blob/master/sample.csv)
 
 ## User-Guide
