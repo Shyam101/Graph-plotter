@@ -5,7 +5,7 @@ hands on experince of different software development methodologies,estimation te
 with implementation 
 
 ## Depolyed app
-[Web Application Link](https://graph-plotter1.herokuapp.com/line-chart")
+[Web Application Link](https://graph-plotter1.herokuapp.com)
 
 ## Features
 - Plot Charts (Bar-chart, Pie-chart, Line-chart)
