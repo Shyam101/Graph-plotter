@@ -11,6 +11,7 @@ const hasNegativeValue = (data) => data.some(entry => entry.value < 0)
 const PieChartPage = (props) => {
 
     const {data} = props;
+    console.log(data)
     if(data.length >= 1) {
         console.log(hasNegativeValue(data))
         if(hasNegativeValue(data)) {

@@ -35,15 +35,25 @@ const BasePage = () => {
     const onFileChange = (e) => {
         let file = e.target.files[0]
         let fileReader = new FileReader();
-        let alls = []
-        fileReader.onload = (edf) => {
-            let str = fileReader.result;
-            alls = str.split('\n');
-            console.log(alls);
+        let fileData = [];
+        let alls;
+        fileReader.onload = (event: any) => {
+            alls = fileReader.result.split('\n');
+            alls.forEach(item => {
+                let c = item.split(',');
+                fileData = [...fileData, 
+                {
+                    name: c[0],
+                    value: +c[1],
+                    color: COLORS[fileData.length % COLORS.length]
+                }]
+            })
+
+            setData(oldState => ([...fileData]));
         }
         
-        console.log(alls);
         fileReader.readAsText(file);
+        console.log(fileData);
     }
 
     return (<div className="split-container">
@@ -58,18 +68,22 @@ const BasePage = () => {
                 <InputCard item={item} index={index} handleChange={handleChange} handleClose={handleClose} />
             </div>))
         }
-        <Button variant="primary"  style={{marginTop: "10px"}} onClick={
-                () => setData((oldState) => {
-                    return([
-                        ...oldState, {color: COLORS[oldState.length % COLORS.length]}
-                    ])
-                })
-            }>New Entry</Button>
-        
-        {/* <div>
-            <label>File</label>
-            <input type='file' onChange={onFileChange} />
-        </div> */}
+        <div id="btn-box">
+            <Button variant="primary" onClick={
+                    () => setData((oldState) => {
+                        return([
+                            ...oldState, {color: COLORS[oldState.length % COLORS.length]}
+                        ])
+                    })
+                }>New Entry</Button>
+            
+            <div style={{marginLeft: "20px"}}>
+                <label for="file-upload" class="custom-file-upload">
+                    <i class="fa fa-cloud-upload"></i> Upload CSV
+                </label>
+                <input id="file-upload" onChange={onFileChange} type="file"/>
+            </div>
+        </div>
 
         </div>
         <div className="split-box"
